@@ -29,7 +29,7 @@ const Differentiators: React.FC = () => {
           <div className="lg:w-1/2">
             <h2 className="text-sm font-bold text-blue-500 uppercase tracking-widest mb-4">Por que a Marant?</h2>
             <h3 className="text-4xl font-extrabold mb-8 leading-tight">O Diferencial que sua Obra <br /><span className="text-blue-500">Realmente Precisa.</span></h3>
-            
+
             <div className="grid sm:grid-cols-1 gap-y-4">
               {diffs.map((diff, idx) => (
                 <div key={idx} className="flex items-center gap-4 group">
@@ -51,18 +51,18 @@ const Differentiators: React.FC = () => {
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="space-y-4 pt-12">
               <div className="rounded-lg overflow-hidden h-64">
-                <img src="https://images.unsplash.com/photo-1590644365607-1c5a519a9a37?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" alt="Obra" />
+                <img src="/differentiators/bus-stop.jpg" className="w-full h-full object-cover" alt="Abrigo de Ônibus" />
               </div>
               <div className="rounded-lg overflow-hidden h-80">
-                <img src="https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" alt="Estrutura" />
+                <img src="/differentiators/stairs.jpg" className="w-full h-full object-cover" alt="Escada Industrial" />
               </div>
             </div>
             <div className="space-y-4">
               <div className="rounded-lg overflow-hidden h-80">
-                <img src="https://images.unsplash.com/photo-1541976590-71394168159b?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" alt="Metallurgia" />
+                <img src="/differentiators/warehouse-aerial.jpg" className="w-full h-full object-cover" alt="Galpão Aéreo" />
               </div>
               <div className="rounded-lg overflow-hidden h-64">
-                <img src="https://images.unsplash.com/photo-1517245315167-bf17d23f7366?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" alt="Tech" />
+                <img src="/differentiators/gate.jpg" className="w-full h-full object-cover" alt="Portão Industrial" />
               </div>
             </div>
           </div>
