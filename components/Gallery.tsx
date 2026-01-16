@@ -4,15 +4,14 @@ import React, { useState } from 'react';
 const Gallery: React.FC = () => {
   const [filter, setFilter] = useState('Todas');
 
-  const categories = ['Todas', 'Industriais', 'Comerciais', 'Metalurgia'];
+  const categories = ['Todas', 'Industriais', 'Comerciais'];
   
   const items = [
-    { id: 1, cat: 'Industriais', title: 'Planta de Produção', img: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&q=80&w=800' },
-    { id: 2, cat: 'Comerciais', title: 'Centro Comercial', img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800' },
-    { id: 3, cat: 'Metalurgia', title: 'Estrutura em Arco', img: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800' },
-    { id: 4, cat: 'Industriais', title: 'Galpão Logístico', img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800' },
-    { id: 5, cat: 'Comerciais', title: 'Escritório Corporativo', img: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800' },
-    { id: 6, cat: 'Metalurgia', title: 'Cobertura Industrial', img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800' },
+    { id: 1, cat: 'Comerciais', title: 'Edifício Corporativo Glass', img: '/projects/commercial-1.png' },
+    { id: 2, cat: 'Industriais', title: 'Fundação Industrial', img: '/projects/industrial-1.jpg' },
+    { id: 3, cat: 'Industriais', title: 'Estrutura de Cobertura', img: '/projects/industrial-2.jpg' },
+    { id: 4, cat: 'Industriais', title: 'Base de Concreto Armado', img: '/projects/industrial-3.jpg' },
+    { id: 5, cat: 'Industriais', title: 'Galpão Logístico', img: '/projects/industrial-4.jpg' },
   ];
 
   const filtered = filter === 'Todas' ? items : items.filter(i => i.cat === filter);
