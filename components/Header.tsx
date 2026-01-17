@@ -19,20 +19,17 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 px-6 py-4">
-      <nav className={`container mx-auto transition-all duration-500 rounded-2xl ${
-        isScrolled ? 'glass-dark py-3 px-8 shadow-2xl' : 'bg-transparent py-4 px-4'
-      }`}>
+      <nav className={`container mx-auto transition-all duration-500 rounded-2xl ${isScrolled ? 'glass-dark py-3 px-8 shadow-2xl' : 'bg-transparent py-4 px-4'
+        }`}>
         <div className="flex justify-between items-center">
           {/* Logo */}
+          {/* Logo */}
           <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="relative w-10 h-10 flex items-center justify-center">
-               <div className="absolute inset-0 bg-blue-600 rotate-45 transform transition-transform group-hover:rotate-90 duration-500"></div>
-               <span className="relative text-white font-black text-xl">M</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-xl tracking-tight leading-none text-white">MARANT</span>
-              <span className="text-[9px] uppercase tracking-[0.3em] text-blue-400">Construtora</span>
-            </div>
+            <img
+              src="/logo-marant.png"
+              alt="Marant Construtora"
+              className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </div>
 
           {/* Desktop Links */}
@@ -55,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
           </div>
 
           {/* Mobile Toggle */}
-          <button 
+          <button
             className="lg:hidden p-2 glass rounded-lg"
             onClick={() => setIsOpen(!isOpen)}
           >

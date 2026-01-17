@@ -7,11 +7,11 @@ const Sustainability: React.FC = () => {
     <section id="sustentabilidade" className="py-32 bg-black overflow-hidden relative">
       {/* Background Glows */}
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-600/10 blur-[150px] rounded-full"></div>
-      
-      <div className="container mx-auto px-6">
-        <div className="glass-dark rounded-[4rem] p-12 md:p-24 border-emerald-500/10 flex flex-col lg:flex-row items-center gap-20">
+
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="glass-dark rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-24 border-emerald-500/10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div className="lg:w-1/2">
-            <div className="inline-flex items-center gap-2 px-5 py-2 glass rounded-full text-emerald-400 text-xs font-black tracking-widest mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-emerald-400 text-[10px] md:text-xs font-black tracking-widest mb-8 md:mb-10">
               <Leaf size={16} /> COMPROMISSO MARANT
             </div>
             <h3 className="text-5xl md:text-7xl font-black text-white mb-10 leading-[0.9] tracking-tighter">
@@ -21,7 +21,7 @@ const Sustainability: React.FC = () => {
             <p className="text-xl text-gray-400 mb-12 leading-relaxed font-medium">
               Não construímos apenas concreto; regeneramos o meio ambiente através do projeto <strong>"Nas Nossas Mãos"</strong>.
             </p>
-            
+
             <div className="space-y-6 mb-12">
               <div className="glass p-8 rounded-3xl border-emerald-500/20 hover:bg-emerald-500/5 transition-colors">
                 <h4 className="text-2xl font-black text-emerald-400 mb-4 flex items-center gap-4">

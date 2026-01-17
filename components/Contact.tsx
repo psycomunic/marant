@@ -7,16 +7,16 @@ const Contact: React.FC = () => {
     <section id="contato" className="py-32 bg-[#050505] relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[180px] rounded-full -z-10"></div>
 
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto glass rounded-[4rem] overflow-hidden flex flex-col lg:flex-row border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.8)]">
-          
-          <div className="lg:w-[40%] bg-gradient-to-br from-blue-900/40 to-black p-12 md:p-20 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-6xl mx-auto glass rounded-[2.5rem] md:rounded-[4rem] overflow-hidden flex flex-col lg:flex-row border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.8)]">
+
+          <div className="lg:w-[40%] bg-gradient-to-br from-blue-900/40 to-black p-10 md:p-20 relative overflow-hidden">
             <div className="absolute top-0 right-0 p-8">
-               <ArrowUpRight size={80} className="text-white/10" />
+              <ArrowUpRight size={80} className="text-white/10" />
             </div>
-            
+
             <h3 className="text-5xl font-black text-white mb-10 leading-tight">Vamos <br /><span className="text-blue-500">edificar</span> seu <br />sucesso?</h3>
-            
+
             <div className="space-y-10 mb-20 relative z-10">
               <div className="flex items-center gap-6 group cursor-pointer">
                 <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
@@ -47,9 +47,9 @@ const Contact: React.FC = () => {
 
           <div className="lg:w-[60%] p-12 md:p-20 bg-black/40 backdrop-blur-3xl">
             <h4 className="text-2xl font-black text-white mb-12 flex items-center gap-4">
-               SOLICITE UM ESTUDO DE VIABILIDADE <div className="h-[2px] flex-grow bg-blue-600/30"></div>
+              SOLICITE UM ESTUDO DE VIABILIDADE <div className="h-[2px] flex-grow bg-blue-600/30"></div>
             </h4>
-            
+
             <form className="space-y-8">
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-2">
@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
                   <input type="email" className="w-full px-0 py-4 bg-transparent border-b border-white/20 text-white focus:outline-none focus:border-blue-500 transition-all placeholder:text-gray-600 font-bold" placeholder="E-MAIL CORPORATIVO" />
                 </div>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <input type="tel" className="w-full px-0 py-4 bg-transparent border-b border-white/20 text-white focus:outline-none focus:border-blue-500 transition-all placeholder:text-gray-600 font-bold" placeholder="WHATSAPP / CELULAR" />
@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
                   </select>
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <textarea rows={3} className="w-full px-0 py-4 bg-transparent border-b border-white/20 text-white focus:outline-none focus:border-blue-500 transition-all placeholder:text-gray-600 font-bold" placeholder="BREVE DESCRIÇÃO DA DEMANDA"></textarea>
               </div>
