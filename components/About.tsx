@@ -9,9 +9,9 @@ const About: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-24 items-center">
           <div className="lg:w-1/2 relative">
             <div className="relative z-10 glass p-4 rounded-[3rem]">
-              <img 
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1000" 
-                alt="Engenharia de Ponta" 
+              <img
+                src="/about/fusion-building.png"
+                alt="Fusão de Solidez e Precisão"
                 className="w-full h-[600px] object-cover rounded-[2.5rem]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-[2.5rem]"></div>
@@ -19,7 +19,7 @@ const About: React.FC = () => {
             {/* Decoration Glass Circle */}
             <div className="absolute -top-10 -left-10 w-40 h-40 glass rounded-full blur-xl opacity-50"></div>
           </div>
-          
+
           <div className="lg:w-1/2">
             <div className="flex items-center gap-3 text-blue-500 font-bold tracking-[0.4em] uppercase text-xs mb-6">
               <div className="w-10 h-[2px] bg-blue-500"></div> NOSSA ESSÊNCIA

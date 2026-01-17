@@ -5,13 +5,27 @@ const Gallery: React.FC = () => {
   const [filter, setFilter] = useState('Todas');
 
   const categories = ['Todas', 'Industriais', 'Comerciais'];
-  
+
   const items = [
     { id: 1, cat: 'Comerciais', title: 'Edifício Corporativo Glass', img: '/projects/commercial-1.png' },
-    { id: 2, cat: 'Industriais', title: 'Fundação Industrial', img: '/projects/industrial-1.jpg' },
-    { id: 3, cat: 'Industriais', title: 'Estrutura de Cobertura', img: '/projects/industrial-2.jpg' },
-    { id: 4, cat: 'Industriais', title: 'Base de Concreto Armado', img: '/projects/industrial-3.jpg' },
-    { id: 5, cat: 'Industriais', title: 'Galpão Logístico', img: '/projects/industrial-4.jpg' },
+    { id: 201, cat: 'Comerciais', title: 'Montagem Estrutural com Guindaste', img: '/projects/comm-crane-structure.jpg' },
+    { id: 202, cat: 'Comerciais', title: 'Cercamento Metálico Modulado', img: '/projects/comm-steel-barriers.jpg' },
+    { id: 203, cat: 'Comerciais', title: 'Complexo Logístico Aéreo', img: '/projects/comm-warehouse-aerial.jpg' },
+    { id: 204, cat: 'Comerciais', title: 'Galpão Industrial de Grande Porte', img: '/projects/comm-metal-hangar.jpg' },
+    { id: 205, cat: 'Comerciais', title: 'Fechamento de Área Técnica', img: '/projects/comm-blue-fencing.jpg' },
+    { id: 206, cat: 'Comerciais', title: 'Interiores Corporativos', img: '/projects/comm-office-interior-wood.png' },
+    { id: 207, cat: 'Comerciais', title: 'Fachada Glazing Diurna', img: '/projects/comm-glass-building-day.png' },
+    { id: 208, cat: 'Comerciais', title: 'Design de Interiores Moderno', img: '/projects/comm-office-interior-green.png' },
+    { id: 209, cat: 'Comerciais', title: 'Fachada Glazing Noturna', img: '/projects/comm-glass-building-night.jpg' },
+    { id: 210, cat: 'Comerciais', title: 'Estrutura Interna de Cobertura', img: '/projects/comm-roof-structure-interior.jpg' },
+    { id: 101, cat: 'Industriais', title: 'Estrutura Interna de Concreto', img: '/projects/ind-structure-internal.png' },
+    { id: 102, cat: 'Industriais', title: 'Execução de Pilares', img: '/projects/ind-columns.jpg' },
+    { id: 103, cat: 'Industriais', title: 'Fundação Circular Armada', img: '/projects/ind-foundation-round.jpg' },
+    { id: 104, cat: 'Industriais', title: 'Armação de Base Retangular', img: '/projects/ind-foundation-rect.jpg' },
+    { id: 105, cat: 'Industriais', title: 'Concretagem com Bomba', img: '/projects/ind-concrete-pour.jpg' },
+    { id: 106, cat: 'Industriais', title: 'Base de Bloco Armado', img: '/projects/ind-foundation-base.jpg' },
+    { id: 107, cat: 'Industriais', title: 'Execução de Estrutura Aérea', img: '/projects/ind-construction-workers.jpg' },
+    { id: 108, cat: 'Industriais', title: 'Vista Aérea do Canteiro', img: '/projects/ind-aerial-site.jpg' },
   ];
 
   const filtered = filter === 'Todas' ? items : items.filter(i => i.cat === filter);
@@ -24,15 +38,14 @@ const Gallery: React.FC = () => {
             <h2 className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-4">Portfólio</h2>
             <h3 className="text-4xl font-extrabold text-gray-900 leading-tight">Nossos Projetos em <span className="text-blue-600">Destaque.</span></h3>
           </div>
-          
+
           <div className="flex flex-wrap gap-2">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all ${
-                  filter === cat ? 'bg-blue-600 text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
+                className={`px-6 py-2 rounded-full font-semibold transition-all ${filter === cat ? 'bg-blue-600 text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  }`}
               >
                 {cat}
               </button>
