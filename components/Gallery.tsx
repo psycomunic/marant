@@ -1,8 +1,10 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Gallery: React.FC = () => {
   const [filter, setFilter] = useState('Todas');
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const categories = ['Todas', 'Industriais', 'Comerciais'];
 
@@ -30,8 +32,20 @@ const Gallery: React.FC = () => {
 
   const filtered = filter === 'Todas' ? items : items.filter(i => i.cat === filter);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImage === null) return;
+      if (e.key === 'Escape') setSelectedImage(null);
+      if (e.key === 'ArrowRight') setSelectedImage((prev) => (prev! + 1) % filtered.length);
+      if (e.key === 'ArrowLeft') setSelectedImage((prev) => (prev! - 1 + filtered.length) % filtered.length);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage, filtered]);
+
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white relative">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
           <div>
@@ -43,7 +57,7 @@ const Gallery: React.FC = () => {
             {categories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
+                onClick={() => { setFilter(cat); setSelectedImage(null); }}
                 className={`px-6 py-2 rounded-full font-semibold transition-all ${filter === cat ? 'bg-blue-600 text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
               >
@@ -54,8 +68,12 @@ const Gallery: React.FC = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map(item => (
-            <div key={item.id} className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer">
+          {filtered.map((item, index) => (
+            <div
+              key={item.id}
+              onClick={() => setSelectedImage(index)}
+              className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer"
+            >
               <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
                 <span className="text-blue-400 text-sm font-bold mb-2">{item.cat}</span>
@@ -65,6 +83,45 @@ const Gallery: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedImage !== null && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl animate-in fade-in duration-200">
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 z-50"
+          >
+            <X size={40} />
+          </button>
+
+          <button
+            onClick={(e) => { e.stopPropagation(); setSelectedImage((selectedImage - 1 + filtered.length) % filtered.length); }}
+            className="absolute left-6 text-white/50 hover:text-white transition-colors p-4 z-50 hidden md:block hover:bg-white/10 rounded-full"
+          >
+            <ChevronLeft size={48} />
+          </button>
+
+          <div className="relative w-full h-full p-4 md:p-20 flex flex-col items-center justify-center" onClick={() => setSelectedImage(null)}>
+            <img
+              src={filtered[selectedImage].img}
+              alt={filtered[selectedImage].title}
+              className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <div className="mt-6 text-center" onClick={(e) => e.stopPropagation()}>
+              <h3 className="text-white text-2xl font-bold mb-2">{filtered[selectedImage].title}</h3>
+              <p className="text-blue-400 font-medium tracking-widest uppercase text-sm">{filtered[selectedImage].cat}</p>
+            </div>
+          </div>
+
+          <button
+            onClick={(e) => { e.stopPropagation(); setSelectedImage((selectedImage + 1) % filtered.length); }}
+            className="absolute right-6 text-white/50 hover:text-white transition-colors p-4 z-50 hidden md:block hover:bg-white/10 rounded-full"
+          >
+            <ChevronRight size={48} />
+          </button>
+        </div>
+      )}
     </section>
   );
 };
